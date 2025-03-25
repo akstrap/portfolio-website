@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useRef } from "react";
 
-// wraps a section and animates in/out on scroll
+// wrap section and animates in/out on scroll
 const AnimatedSection = ({ children }: { children: React.ReactNode }) => {
   const ref = useRef(null);
-  const inView = useInView(ref, { margin: "-30% 0px -30% 0px" }); // ✅ same effect, no TS error
+  const inView = useInView(ref, { margin: "-30% 0px -30% 0px" }); // trigger when 30% of the section in view
   const controls = useAnimation();
 
   useEffect(() => {
