@@ -155,7 +155,6 @@ const Skills = () => {
               <div className="flex flex-col items-center relative h-48 w-full">
                 {[prev, active, next].map((index, i) => {
                   const skill = category.skills[index];
-                  const isActive = index === active;
                   return (
                     <div
                       key={skill.name}
