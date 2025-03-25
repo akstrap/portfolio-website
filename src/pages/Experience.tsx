@@ -2,6 +2,16 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedSection from "../components/AnimatedSection";
 
+// direct image imports (correct for Vite & Vercel)
+import costarImage from "../assets/CoStarCampus.jpg";
+import costarLogo from "../assets/CoStarLogo.png";
+import jbhuntImage from "../assets/JBHuntCampus.jpg";
+import jbhuntLogo from "../assets/JBHuntLogo.png";
+import citizensImage from "../assets/CitizensCampus.jpg";
+import citizensLogo from "../assets/CitizensLogo.png";
+import bocconiImage from "../assets/Cam1.jpg";
+import bocconiLogo from "../assets/BocconiLogo.webp";
+
 interface Experience {
   title: string;
   role: string;
@@ -22,8 +32,8 @@ const experiences: Experience[] = [
     role: "ML/AI Research Assistant",
     location: "Milan, Italy",
     date: "Jan 2025 – May 2025",
-    logo: "BocconiLogo.webp",
-    image: "Cam1.jpg",
+    logo: bocconiLogo,
+    image: bocconiImage,
     scope:
       "researched effects of income inequality on GDP growth using machine learning",
     stack: ["Python", "Pandas", "NumPy", "Random Forest", "Gradient Boosting"],
@@ -37,8 +47,8 @@ const experiences: Experience[] = [
     role: "Full Stack Software Eng. Intern",
     location: "Richmond, VA",
     date: "Jun 2024 – Aug 2024",
-    logo: "CoStarLogo.png",
-    image: "CoStarCampus.jpg",
+    logo: costarLogo,
+    image: costarImage,
     scope:
       "developed micro frontends and backend apis to improve data flow + visualization for commercial real estate platform",
     stack: ["React", "TypeScript", "Express", "C#", ".NET Core", "SQL Server"],
@@ -53,8 +63,8 @@ const experiences: Experience[] = [
     role: "Data Engineer Intern",
     location: "Remote",
     date: "Jan 2024 – May 2024",
-    logo: "CitizensLogo.png",
-    image: "CitizensCampus.jpg",
+    logo: citizensLogo,
+    image: citizensImage,
     scope:
       "built automated pipelines to transform + stream 3k+ daily JSON entries using real-time infrastructure",
     stack: ["C#", "PostgreSQL", "Apache Kafka", "REST APIs"],
@@ -69,8 +79,8 @@ const experiences: Experience[] = [
     role: "Mobile Software Dev Intern",
     location: "Lowell, AR",
     date: "May 2023 – Dec 2023",
-    logo: "JBHuntLogo.png",
-    image: "JBHuntCampus.jpeg",
+    logo: jbhuntLogo,
+    image: jbhuntImage,
     scope:
       "developed new cross-platform features and reusable mobile components for logistics app used by 5k+ daily drivers",
     stack: ["React Native", "JavaScript", "TypeScript", "Node.js", "Express"],
@@ -111,7 +121,7 @@ const Experience = () => {
                 `}
               >
                 <img
-                  src={`/src/assets/${exp.logo}`}
+                  src={exp.logo}
                   alt={exp.title}
                   className="w-6 h-6 object-contain rounded"
                 />
@@ -133,7 +143,7 @@ const Experience = () => {
               >
                 {/* banner image */}
                 <img
-                  src={`/src/assets/${selected.image}`}
+                  src={selected.image}
                   alt={selected.title}
                   className="rounded-lg w-full h-48 object-cover"
                 />

@@ -45,18 +45,18 @@ const Home = () => {
         {/* call to action buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="#projects"
-            className="px-6 py-3 bg-button hover:bg-button-hover text-white rounded-lg text-sm transition-all"
-          >
-            View Projects
-          </a>
-          <a
-            href="/resume.pdf"
+            href="public/AkshitThavanatiResumeSWE.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 border border-accent text-accent rounded-lg text-sm hover:bg-accent/10 transition-all"
+            className="px-6 py-3 bg-button hover:bg-button-hover text-white rounded-lg text-sm transition-all"
           >
             View Resume
+          </a>
+          <a
+            href="#contact"
+            className="px-6 py-3 border border-accent text-accent rounded-lg text-sm hover:bg-accent/10 transition-all"
+          >
+            Contact Me
           </a>
         </div>
       </motion.div>
