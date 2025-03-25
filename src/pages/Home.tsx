@@ -5,12 +5,12 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col justify-center items-center px-6 bg-gradient-to-b from-primary to-surface relative"
+      className="min-h-screen flex flex-col justify-center items-center px-6 bg-gradient-to-b from-primary to-surface relative pt-[80px]"
     >
       {/* social icons on left side */}
       <div className="hidden md:flex flex-col gap-4 absolute left-8 top-1/3 text-accent text-xl">
         <a
-          href="https://github.com/akstrap"
+          href="https://github.com/YOUR_GITHUB"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-highlight"
@@ -38,7 +38,8 @@ const Home = () => {
           hey, i’m <span className="text-accent">akshit thavanati</span>
         </h1>
         <p className="text-gray-700 text-lg md:text-xl mb-8">
-          builder. thinker. full stack dev & economics student @ virginia tech.
+          building in full stack, machine learning, and data automation. student
+          @ virginia tech.
         </p>
 
         {/* call to action buttons */}

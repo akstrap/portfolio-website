@@ -13,7 +13,7 @@ const About = () => {
             </h1>
             <p className="text-gray-700 text-sm mb-4">
               currently pursuing a Bachelor of Science in Computer Science &
-              Bachelor of Arts in Economics at
+              Bachelor of Arts in Economics
             </p>
             <p className="text-highlight font-semibold text-lg mb-2">
               Virginia Tech
