@@ -54,9 +54,11 @@ const Experience = () => {
   const selected = experiences[selectedIndex];
 
   return (
-    <section id="experience" className="min-h-screen px-6 py-20 bg-white">
+    <section id="experience" className="min-h-screen px-6 py-20 bg-primary">
       <AnimatedSection>
-        <h2 className="text-4xl font-semibold mb-12 text-center">experience</h2>
+        <h2 className="text-4xl font-semibold mb-12 text-center text-highlight">
+          experience
+        </h2>
 
         <div className="flex flex-col md:flex-row gap-8 max-w-6xl mx-auto">
           {/* left-side tabs */}
@@ -68,8 +70,8 @@ const Experience = () => {
                 className={`text-left px-4 py-3 rounded-md border text-sm transition-all
                   ${
                     selectedIndex === i
-                      ? "bg-red-50 border-red-400 text-red-600 font-medium shadow"
-                      : "border-gray-300 hover:bg-gray-100"
+                      ? "bg-accent/10 border-accent text-accent font-medium shadow"
+                      : "border-gray-300 hover:bg-surface"
                   }
                 `}
               >
@@ -87,7 +89,7 @@ const Experience = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.4 }}
-                className="bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-sm"
+                className="bg-surface p-6 rounded-xl border border-accent shadow-sm"
               >
                 <h3 className="text-xl font-semibold mb-1">{selected.role}</h3>
                 <p className="text-gray-600 mb-1">

@@ -1,50 +1,63 @@
 import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Home = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col items-center justify-center text-center px-6"
+      className="min-h-screen flex flex-col justify-center items-center px-6 bg-gradient-to-b from-primary to-surface relative"
     >
-      {/* intro text */}
-      <motion.h1
+      {/* social icons on left side */}
+      <div className="hidden md:flex flex-col gap-4 absolute left-8 top-1/3 text-accent text-xl">
+        <a
+          href="https://github.com/yourusername"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-highlight"
+        >
+          <FaGithub />
+        </a>
+        <a
+          href="https://linkedin.com/in/akshit-thavanati"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-highlight"
+        >
+          <FaLinkedin />
+        </a>
+      </div>
+
+      {/* main text */}
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        className="text-5xl md:text-6xl font-bold mb-4"
+        transition={{ duration: 0.6 }}
+        className="text-center max-w-3xl"
       >
-        hey, i’m akshit thavanati
-      </motion.h1>
+        <h1 className="text-5xl md:text-6xl font-bold text-text mb-4">
+          hey, i’m <span className="text-accent">akshit thavanati</span>
+        </h1>
+        <p className="text-gray-700 text-lg md:text-xl mb-8">
+          builder. thinker. full stack dev & economics student @ virginia tech.
+        </p>
 
-      {/* subheading */}
-      <motion.p
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9 }}
-        className="text-xl md:text-2xl text-gray-600 max-w-xl"
-      >
-        aspiring software engineer & economics enthusiast
-      </motion.p>
-
-      {/* buttons */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.1 }}
-        className="mt-8 flex gap-4"
-      >
-        <a
-          href="#experience"
-          className="rounded-lg bg-black text-white px-5 py-3 hover:bg-gray-800 transition-all"
-        >
-          view my work
-        </a>
-        <a
-          href="#contact"
-          className="rounded-lg border-2 border-black px-5 py-3 hover:bg-black hover:text-white transition-all"
-        >
-          get in touch
-        </a>
+        {/* call to action buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="#projects"
+            className="px-6 py-3 bg-button hover:bg-button-hover text-white rounded-lg text-sm transition-all"
+          >
+            View Projects
+          </a>
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-3 border border-accent text-accent rounded-lg text-sm hover:bg-accent/10 transition-all"
+          >
+            View Resume
+          </a>
+        </div>
       </motion.div>
     </section>
   );
