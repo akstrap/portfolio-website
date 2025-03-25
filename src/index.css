@@ -7,3 +7,26 @@ html {
 body {
   @apply bg-primary text-text;
 }
+@layer utilities {
+  .animate-spin-slow {
+    animation: spin 18s linear infinite;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
