@@ -1,10 +1,10 @@
 const About = () => {
   return (
     <section
+      id="about"
       className="min-h-screen flex items-center justify-center"
-      id="home"
     >
-      <h2 className="text-3xl font-semibold">Welcome to Akshit’s ABOUT</h2>
+      <h2 className="text-3xl font-semibold">About Me</h2>
     </section>
   );
 };

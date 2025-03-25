@@ -1,10 +1,10 @@
 const Home = () => {
   return (
     <section
-      className="min-h-screen flex items-center justify-center"
       id="home"
+      className="min-h-screen flex items-center justify-center"
     >
-      <h2 className="text-3xl font-semibold">Welcome to Akshit’s Site</h2>
+      <h2 className="text-3xl font-semibold">Welcome to my site!</h2>
     </section>
   );
 };

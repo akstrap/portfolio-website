@@ -1,12 +1,10 @@
 const Experience = () => {
   return (
     <section
+      id="experience"
       className="min-h-screen flex items-center justify-center"
-      id="home"
     >
-      <h2 className="text-3xl font-semibold">
-        Welcome to Akshit’s EXPERIENCES
-      </h2>
+      <h2 className="text-3xl font-semibold">Work Experience</h2>
     </section>
   );
 };

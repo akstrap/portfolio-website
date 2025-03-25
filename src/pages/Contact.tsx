@@ -1,10 +1,10 @@
 const Contact = () => {
   return (
     <section
+      id="contact"
       className="min-h-screen flex items-center justify-center"
-      id="home"
     >
-      <h2 className="text-3xl font-semibold">Welcome to Akshit’s CONTACT</h2>
+      <h2 className="text-3xl font-semibold">Reach Out!</h2>
     </section>
   );
 };

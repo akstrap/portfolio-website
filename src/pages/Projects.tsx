@@ -1,10 +1,10 @@
 const Projects = () => {
   return (
     <section
+      id="projects"
       className="min-h-screen flex items-center justify-center"
-      id="home"
     >
-      <h2 className="text-3xl font-semibold">Welcome to Akshit’s PROJECTS</h2>
+      <h2 className="text-3xl font-semibold">My Projects</h2>
     </section>
   );
 };
