@@ -1,3 +1,9 @@
+## Welcome! 
+
+This is the codebase for my very own person website! Made this in a jiffy realizing I actually skiped this typical step in a software engineer's journey. Hope you enjoy and feel free to connect with me via the website to provde feedback. Ciao 😼!
+
+Visit the website: www.akshitthavanati.com
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
