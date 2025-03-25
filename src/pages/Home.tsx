@@ -10,7 +10,7 @@ const Home = () => {
       {/* social icons on left side */}
       <div className="hidden md:flex flex-col gap-4 absolute left-8 top-1/3 text-accent text-xl">
         <a
-          href="https://github.com/yourusername"
+          href="https://github.com/akstrap"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-highlight"
