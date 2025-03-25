@@ -1,5 +1,6 @@
 import AnimatedSection from "../components/AnimatedSection";
 import profileImage from "../assets/profile.jpg";
+import Skills from "../components/Skills";
 
 const About = () => {
   return (
@@ -13,7 +14,7 @@ const About = () => {
             </h1>
             <p className="text-gray-700 text-sm mb-4">
               currently pursuing a Bachelor of Science in Computer Science &
-              Bachelor of Arts in Economics
+              Bachelor of Arts in Economics at
             </p>
             <p className="text-highlight font-semibold text-lg mb-2">
               Virginia Tech
@@ -38,14 +39,17 @@ const About = () => {
           </div>
 
           {/* profile image */}
-          <div className="md:w-1/3 w-48 h-48 bg-accent/20 rounded-full overflow-hidden flex items-center justify-center">
+          <div className="md:w-1/3 w-48 h-48 rounded-full overflow-hidden shadow-lg border-4 border-accent">
             <img
               src={profileImage}
-              alt="Profile"
+              alt="Akshit Thavanati"
               className="w-full h-full object-cover"
             />
           </div>
         </div>
+
+        {/* updated skill categories */}
+        <Skills />
       </AnimatedSection>
     </section>
   );
