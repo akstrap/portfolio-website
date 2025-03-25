@@ -2,50 +2,82 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedSection from "../components/AnimatedSection";
 
-const experiences = [
+interface Experience {
+  title: string;
+  role: string;
+  location: string;
+  date: string;
+  logo: string;
+  image: string;
+  scope: string;
+  stack: string[];
+  impact: string;
+  learned: string;
+  liked: string;
+}
+
+const experiences: Experience[] = [
   {
-    title: "Bocconi University",
+    title: "Bocconi University - ML/AI Research Assistant",
     role: "ML/AI Research Assistant",
     location: "Milan, Italy",
     date: "Jan 2025 – May 2025",
-    description: [
-      "researched income inequality + economic growth using ml models",
-      "processed + cleaned socio-economic datasets with pandas & numpy",
-      "worked w/ cross-disciplinary teams on ethical ai frameworks",
-    ],
+    logo: "BocconiLogo.webp",
+    image: "Cam1.jpg",
+    scope:
+      "researched effects of income inequality on GDP growth using machine learning",
+    stack: ["Python", "Pandas", "NumPy", "Random Forest", "Gradient Boosting"],
+    impact: "contributed to a multi-institutional research paper (in progress)",
+    learned:
+      "how to clean and model socio-economic data + work with interdisciplinary researchers",
+    liked: "loved applying ml to global issues in a research setting",
   },
   {
-    title: "CoStar Group",
+    title: "CoStar Group - Full Stack Engineer",
     role: "Full Stack Software Eng. Intern",
     location: "Richmond, VA",
     date: "Jun 2024 – Aug 2024",
-    description: [
-      "built micro frontends + apis using react, express, docker, .net",
-      "created etl pipelines to handle 1M+ property listings",
-      "improved reporting pipeline for 15% faster internal data access",
-    ],
+    logo: "CoStarLogo.png",
+    image: "CoStarCampus.jpg",
+    scope:
+      "developed micro frontends and backend apis to improve data flow + visualization for commercial real estate platform",
+    stack: ["React", "TypeScript", "Express", "C#", ".NET Core", "SQL Server"],
+    impact: "boosted internal reporting efficiency by 15% across product teams",
+    learned:
+      "how to build production-grade services + scale backend performance",
+    liked:
+      "working with smart folks and building tools that actually mattered to analysts",
   },
   {
-    title: "Citizens Financial Group",
+    title: "Citizens Financial Group - Data Engineer",
     role: "Data Engineer Intern",
     location: "Remote",
     date: "Jan 2024 – May 2024",
-    description: [
-      "built scalable data pipeline using c#, kafka, and postgresql",
-      "automated 3k+ json records daily, saving manual hours",
-      "optimized analytics workload performance by ~25%",
-    ],
+    logo: "CitizensLogo.png",
+    image: "CitizensCampus.jpg",
+    scope:
+      "built automated pipelines to transform + stream 3k+ daily JSON entries using real-time infrastructure",
+    stack: ["C#", "PostgreSQL", "Apache Kafka", "REST APIs"],
+    impact:
+      "reduced manual effort by 13% and improved data availability for downstream analytics",
+    learned:
+      "hands-on data streaming, schema design, and real-time ingestion best practices",
+    liked: "lots of backend ownership and automation-focused dev work",
   },
   {
-    title: "J.B. Hunt",
+    title: "J.B. Hunt - Software Developer",
     role: "Mobile Software Dev Intern",
     location: "Lowell, AR",
     date: "May 2023 – Dec 2023",
-    description: [
-      "developed cross-platform features w/ react native",
-      "shipped reusable components to support 5k+ daily drivers",
-      "cut launch time by 0.4s by improving legacy code",
-    ],
+    logo: "JBHuntLogo.png",
+    image: "JBHuntCampus.jpeg",
+    scope:
+      "developed new cross-platform features and reusable mobile components for logistics app used by 5k+ daily drivers",
+    stack: ["React Native", "JavaScript", "TypeScript", "Node.js", "Express"],
+    impact:
+      "cut mobile app launch time by 0.4s and sped up feature delivery for downstream teams",
+    learned: "how to structure large-scale mobile codebases for performance",
+    liked: "shipped real features fast + learned from experienced mobile devs",
   },
 ];
 
@@ -54,9 +86,12 @@ const Experience = () => {
   const selected = experiences[selectedIndex];
 
   return (
-    <section id="experience" className="min-h-screen px-6 py-20 bg-primary">
+    <section
+      id="experience"
+      className="min-h-screen px-6 py-20 bg-primary text-text"
+    >
       <AnimatedSection>
-        <h2 className="text-4xl font-semibold mb-12 text-center text-highlight">
+        <h2 className="text-4xl font-semibold mb-12 text-highlight text-center">
           experience
         </h2>
 
@@ -67,20 +102,25 @@ const Experience = () => {
               <button
                 key={i}
                 onClick={() => setSelectedIndex(i)}
-                className={`text-left px-4 py-3 rounded-md border text-sm transition-all
+                className={`flex items-center gap-3 px-4 py-3 rounded-md border text-sm transition-all w-full
                   ${
                     selectedIndex === i
-                      ? "bg-accent/10 border-accent text-accent font-medium shadow"
-                      : "border-gray-300 hover:bg-surface"
+                      ? "bg-surface border-accent text-accent font-medium shadow"
+                      : "border-gray-300 hover:bg-surface/50"
                   }
                 `}
               >
-                {exp.title}
+                <img
+                  src={`/src/assets/${exp.logo}`}
+                  alt={exp.title}
+                  className="w-6 h-6 object-contain rounded"
+                />
+                <span>{exp.title}</span>
               </button>
             ))}
           </div>
 
-          {/* right-side animated content */}
+          {/* right-side detail panel */}
           <div className="md:w-2/3">
             <AnimatePresence mode="wait">
               <motion.div
@@ -89,19 +129,47 @@ const Experience = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.4 }}
-                className="bg-surface p-6 rounded-xl border border-accent shadow-sm"
+                className="bg-surface p-6 rounded-xl border border-accent shadow-sm space-y-6"
               >
-                <h3 className="text-xl font-semibold mb-1">{selected.role}</h3>
-                <p className="text-gray-600 mb-1">
-                  {selected.title} — {selected.location}
-                </p>
-                <p className="text-sm text-gray-500 mb-4">{selected.date}</p>
+                {/* banner image */}
+                <img
+                  src={`/src/assets/${selected.image}`}
+                  alt={selected.title}
+                  className="rounded-lg w-full h-48 object-cover"
+                />
 
-                <ul className="list-disc ml-5 space-y-1 text-sm text-gray-700">
-                  {selected.description.map((point, i) => (
-                    <li key={i}>{point}</li>
-                  ))}
-                </ul>
+                <div>
+                  <h3 className="text-xl font-semibold mb-1">
+                    {selected.role}
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    {selected.title} — {selected.location}
+                  </p>
+                  <p className="text-sm text-gray-500">{selected.date}</p>
+                </div>
+
+                <div className="space-y-4 text-sm text-gray-700">
+                  <div>
+                    <h4 className="font-semibold text-text">Project Scope</h4>
+                    <p>{selected.scope}</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-text">Tech Stack</h4>
+                    <p>{selected.stack.join(", ")}</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-text">Impact</h4>
+                    <p>{selected.impact}</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-text">What I Learned</h4>
+                    <p>{selected.learned}</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-text">What I Liked</h4>
+                    <p>{selected.liked}</p>
+                  </div>
+                </div>
               </motion.div>
             </AnimatePresence>
           </div>

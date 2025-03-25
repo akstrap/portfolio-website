@@ -1,4 +1,5 @@
 import AnimatedSection from "../components/AnimatedSection";
+import profileImage from "../assets/profile.jpg";
 
 const About = () => {
   return (
@@ -38,8 +39,11 @@ const About = () => {
 
           {/* profile image */}
           <div className="md:w-1/3 w-48 h-48 bg-accent/20 rounded-full overflow-hidden flex items-center justify-center">
-            {/* drop your image here once you have it */}
-            <span className="text-accent text-sm">your photo here</span>
+            <img
+              src={profileImage}
+              alt="Profile"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </AnimatedSection>
