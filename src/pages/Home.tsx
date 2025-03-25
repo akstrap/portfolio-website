@@ -45,7 +45,7 @@ const Home = () => {
         {/* call to action buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="public/AkshitThavanatiResumeSWE.pdf"
+            href="resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-3 bg-button hover:bg-button-hover text-white rounded-lg text-sm transition-all"
