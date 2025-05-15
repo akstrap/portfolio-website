@@ -11,6 +11,8 @@ import citizensImage from "../assets/CitizensCampus.jpg";
 import citizensLogo from "../assets/CitizensLogo.png";
 import bocconiImage from "../assets/Cam1.jpg";
 import bocconiLogo from "../assets/BocconiLogo.webp";
+import gitHubLogo from "../assets/GitHubLogo.png";
+import gitHubImage from "../assets/GitHubCampus.jpg";
 
 interface Experience {
   title: string;
@@ -27,6 +29,19 @@ interface Experience {
 }
 
 const experiences: Experience[] = [
+  {
+    title: "GitHub - Full Stack Engineer",
+    role: "Full Stack Software Eng. Intern",
+    location: "Remote",
+    date: "Jun 2025 – Aug 2025",
+    logo: gitHubLogo,
+    image: gitHubImage,
+    scope: "incoming summer 2025 on the Authentication team",
+    stack: ["tbd..."],
+    impact: "tbd...",
+    learned: "tbd...",
+    liked: "octocat!",
+  },
   {
     title: "Bocconi University - ML/AI Research Assistant",
     role: "ML/AI Research Assistant",
